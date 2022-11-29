@@ -1,0 +1,63 @@
+query GetSessionByID($id: ID) {
+  session(id: $id) {
+    id
+    completed_steps
+    current_step
+  }
+}
+
+query GetSessions {
+  session {
+    id
+    completed_steps
+    current_step
+  }
+}
+
+query GetStepByID($id: ID) {
+  step(id: $id) {
+    id
+    complete
+    schema_key
+  }
+}
+
+query GetSteps {
+  step {
+    id
+    complete
+    schema_key
+  }
+}
+
+query GetAnswerByID($id: ID) {
+  answer(id: $id) {
+    id
+    session_id
+    step_key
+    answer
+  }
+}
+
+query GetAnswers {
+  answer {
+    id
+    session_id
+    step_key
+    answer
+  }
+}
+
+query GetWizard($id: ID) {
+  session(id: $id) {
+    id
+    completed_steps
+    current_step
+  }
+  answers(session_id: $id) {
+    id
+    session_id
+    step_key
+    answer
+  }
+}

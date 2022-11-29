@@ -1,0 +1,24 @@
+type Answer {
+  id: ID
+  session_id: ID
+  step_key: String
+  answer: String!
+}
+
+type Step {
+  id: ID
+  complete: Boolean
+  schema_key: String
+}
+
+type Session {
+  id: ID
+  completed_steps: [String]
+  current_step: String!
+}
+
+type Query {
+  session(id: ID!): Session
+  step(id: ID!): Step
+  answer(id: ID!): Answer
+}

@@ -1,0 +1,9 @@
+# Ignore project-specific cache directory
+*.egg-info
+*.pytest_cache
+*.log
+
+# Ignore build output directory
+build
+env
+old
